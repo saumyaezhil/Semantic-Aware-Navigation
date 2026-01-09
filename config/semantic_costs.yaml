@@ -1,0 +1,37 @@
+# Semantic class cost assignments
+# Cost values range from 0 (free) to 254 (lethal)
+# 255 is reserved for unknown space
+
+semantic_costs:
+  # Navigable surfaces
+  road: 0           # Preferred - roads are safe
+  sidewalk: 10      # Acceptable
+  
+  # Semi-navigable
+  grass: 50         # Discouraged but possible
+  dirt: 40          # Slightly better than grass
+  
+  # Obstacles
+  building: 254     # Lethal
+  wall: 254         # Lethal
+  fence: 254        # Lethal
+  
+  # Dynamic/sensitive objects
+  person: 200       # Very high cost - avoid humans
+  vehicle: 180      # High cost - avoid vehicles
+  bicycle: 150      # Moderate-high cost
+  
+  # Natural obstacles
+  tree: 254         # Lethal
+  bush: 150         # High cost
+  
+  # Default
+  unknown: 128      # Medium cost for unknown classes
+
+# Semantic layer parameters
+semantic_layer:
+  enabled: true
+  update_frequency: 2.0  # Hz
+  decay_rate: 0.1        # How fast costs decay (0-1)
+  min_confidence: 0.5    # Minimum segmentation confidence
+  inflation_radius: 0.3  # Additional inflation around semantic objects (meters)
