@@ -17,4 +17,4 @@ This allows the robot to avoid certain types of regions (like obstacles or restr
 - A semantic costmap layer that affects path planning  
 - A launch file to run the full pipeline  
 
----- in progress :) ----
+---- in progress ----
